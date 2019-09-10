@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Submissions 3</string>
+
+    <string name="tv_shows">Acara TV</string>
+    <string name="movies">Film</string>
+    <string name="change_language_settings">Pengaturan Bahasa</string>
+</resources>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Submissions 3</string>
+
+    <string name="tv_shows">TV Shows</string>
+    <string name="movies">Movies</string>
+    <string name="change_language_settings">Change language settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="description">Deskripsi</string>
+    <string name="temperature">Temperatur</string>
+    <string name="name">Nama Kota</string>
+    <string name="insert_city">Masukkan id kota misal Jakarta = 1642911</string>
+    <string name="search">Cari</string>
+    <string name="id_jakarta_bandung_semarang">1642911,1650357,1627896</string>
+</resources>
