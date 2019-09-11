@@ -5,24 +5,25 @@ import org.json.JSONObject;
 public class WeatherItems {
     private int id;
     private String title;
-    private String poster_path;
+    private String posterpath;
     private String overview;
-    private String original_language;
+    private String originallanguage;
 
     public WeatherItems(JSONObject object) {
         try {
 
-            int id = object.getJSONArray("results").getJSONObject(0).getInt("id");
-            String title = object.getJSONArray("results").getJSONObject(0).getString("title");
-            String overview = object.getJSONArray("results").getJSONObject(0).getString("overview");
-            String poster_path = object.getJSONArray("results").getJSONObject(0).getString("poster_path");
-            String original_language = object.getJSONArray("results").getJSONObject(0).getString("original_language");
+            int id = object.getInt("id");
+            String title = object.getString("title");
+
+            String overview = object.getString("overview");
+            String posterpath = object.getString("poster_path");
+            String originallanguage = object.getString("original_language");
 
             this.id = id;
-            this.poster_path = poster_path;
+            this.posterpath = posterpath;
             this.title = title;
             this.overview = overview;
-            this.original_language = original_language;
+            this.originallanguage = originallanguage;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -44,12 +45,12 @@ public class WeatherItems {
         this.title = title;
     }
 
-    public String getPoster_path() {
-        return poster_path;
+    public String getPosterpath() {
+        return posterpath;
     }
 
-    public void setPoster_path(String poster_path) {
-        this.poster_path = poster_path;
+    public void setPosterpath(String poster_path) {
+        this.posterpath = posterpath;
     }
 
     public String getOverview() {
@@ -60,12 +61,12 @@ public class WeatherItems {
         this.overview = overview;
     }
 
-    public String getOriginal_language() {
-        return original_language;
+    public String getOriginallanguage() {
+        return originallanguage;
     }
 
-    public void setOriginal_language(String original_language) {
-        this.original_language = original_language;
+    public void setOriginallanguage(String originallanguage) {
+        this.originallanguage = originallanguage;
     }
 
 

@@ -17,16 +17,12 @@ import cz.msebera.android.httpclient.Header;
 
 public class MainViewModel extends ViewModel {
 
-   // private static final String cities ="1642911,1650357,1627896";
-   // private static final String API_KEY = "17349914fed07fb7ac8ad1749379c83c";
 
     private MutableLiveData<ArrayList<WeatherItems>> listWeathers = new MutableLiveData<>();
 
     void setWeather() {
         AsyncHttpClient client = new AsyncHttpClient();
         final ArrayList<WeatherItems> listItems = new ArrayList<>();
-       // String url = "https://api.openweathermap.org/data/2.5/group?id=" + cities + "&units=metric&appid=" + API_KEY;
-
         String url = "https://api.themoviedb.org/3/movie/550?api_key=12db43054846dfd314fb57bd1ee0bda1";
         client.get(url, new AsyncHttpResponseHandler() {
             @Override
@@ -34,7 +30,7 @@ public class MainViewModel extends ViewModel {
                 try {
                     String result = new String(responseBody);
                     JSONObject responseObject = new JSONObject(result);
-                    JSONArray list = responseObject.getJSONArray("results");
+                    JSONArray list = responseObject.getJSONArray("list");
 
                     for (int i = 0; i < list.length(); i++) {
                         JSONObject weather = list.getJSONObject(i);
