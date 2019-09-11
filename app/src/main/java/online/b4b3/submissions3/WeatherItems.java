@@ -3,7 +3,7 @@ package online.b4b3.submissions3;
 import org.json.JSONObject;
 
 public class WeatherItems {
-    private int id;
+
     private String title;
     private String posterpath;
     private String overview;
@@ -12,15 +12,15 @@ public class WeatherItems {
     public WeatherItems(JSONObject object) {
         try {
 
-            int id = object.getInt("id");
+           // int id = object.getInt("id");
             String title = object.getString("title");
-
             String overview = object.getString("overview");
-            String posterpath = object.getString("poster_path");
+           // String posterpath = object.getString("poster_path");
             String originallanguage = object.getString("original_language");
 
-            this.id = id;
-            this.posterpath = posterpath;
+           // this.id = id;
+            this.posterpath = ("https://image.tmdb.org/t/p/w185" + object.getString("poster_path"));
+            //this.posterpath = posterpath;
             this.title = title;
             this.overview = overview;
             this.originallanguage = originallanguage;
@@ -29,13 +29,7 @@ public class WeatherItems {
         }
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;

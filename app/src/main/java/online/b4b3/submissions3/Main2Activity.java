@@ -34,9 +34,12 @@ public class Main2Activity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
         progressBar = findViewById(R.id.progressBar);
         mainViewModel.setWeather();
         showLoading(true);
+
+
 
     }
 

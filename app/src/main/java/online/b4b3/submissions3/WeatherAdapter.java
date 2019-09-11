@@ -1,6 +1,7 @@
 package online.b4b3.submissions3;
 
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,10 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+
 import java.util.ArrayList;
 
 public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder> {
     private ArrayList<WeatherItems> mData = new ArrayList<>();
+
+    private Context context;
 
     public void setData(ArrayList<WeatherItems> items) {
         mData.clear();
@@ -28,6 +34,16 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
     @Override
     public void onBindViewHolder(@NonNull WeatherViewHolder weatherViewHolder, int position) {
         weatherViewHolder.bind(mData.get(position));
+
+
+
+        /*
+        Glide.with(context)
+                .load(getListMovie().get(position).getPhoto())
+                .apply(new RequestOptions().override(55, 55))
+                .into(holder.imgPhoto);
+
+         */
     }
     @Override
     public int getItemCount() {
@@ -46,9 +62,9 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
         }
 
         void bind(WeatherItems weatherItems) {
-            textViewNamaKota.setText(weatherItems.getId());
-            textViewTemperature.setText(weatherItems.getId());
-            textViewDescription.setText(weatherItems.getId());
+            textViewNamaKota.setText(weatherItems.getTitle());
+            textViewTemperature.setText(weatherItems.getPosterpath());
+            textViewDescription.setText(weatherItems.getOverview());
         }
     }
 }

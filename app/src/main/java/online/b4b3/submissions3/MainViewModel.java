@@ -17,20 +17,23 @@ import cz.msebera.android.httpclient.Header;
 
 public class MainViewModel extends ViewModel {
 
+    private static final String API_KEY ="12db43054846dfd314fb57bd1ee0bda1";
+
 
     private MutableLiveData<ArrayList<WeatherItems>> listWeathers = new MutableLiveData<>();
 
     void setWeather() {
         AsyncHttpClient client = new AsyncHttpClient();
         final ArrayList<WeatherItems> listItems = new ArrayList<>();
-        String url = "https://api.themoviedb.org/3/movie/550?api_key=12db43054846dfd314fb57bd1ee0bda1";
+        String url = "https://api.themoviedb.org/3/discover/movie?api_key=12db43054846dfd314fb57bd1ee0bda1&language=en-US";
+        //String url = "https://api.themoviedb.org/3/movie/550?api_key="+API_KEY;
         client.get(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
                     String result = new String(responseBody);
                     JSONObject responseObject = new JSONObject(result);
-                    JSONArray list = responseObject.getJSONArray("list");
+                    JSONArray list = responseObject.getJSONArray("results");
 
                     for (int i = 0; i < list.length(); i++) {
                         JSONObject weather = list.getJSONObject(i);
