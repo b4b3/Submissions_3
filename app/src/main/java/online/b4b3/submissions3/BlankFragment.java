@@ -51,19 +51,16 @@ public class BlankFragment extends Fragment {
 
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         mainViewModel.setWeather();
-        showLoading(true);
+        //showLoading(false);
         mainViewModel.getWeathers().observe(this, getMvData);
    }
-
     private Observer<ArrayList<WeatherItems>> getMvData = new Observer<ArrayList<WeatherItems>>() {
         @Override
         public void onChanged(final ArrayList<WeatherItems> movies) {
             movieTvAdapter.setData(movies);
-            showLoading(false);
-
+            //showLoading(false);
         }
     };
-
     private void showLoading(boolean loading) {
         if (loading) {
             progressBar.setVisibility(View.VISIBLE);

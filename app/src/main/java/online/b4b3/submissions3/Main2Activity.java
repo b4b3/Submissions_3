@@ -26,6 +26,7 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         mainViewModel.getWeathers().observe(this, getWeather);
 
