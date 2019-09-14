@@ -19,7 +19,7 @@ public class WeatherItems {
             String originallanguage = object.getString("original_language");
 
            // this.id = id;
-            this.posterpath = ("https://image.tmdb.org/t/p/w185" + object.getString("poster_path"));
+            this.posterpath = ("https://image.tmdb.org/t/p/original" + object.getString("poster_path"));
             //this.posterpath = posterpath;
             this.title = title;
             this.overview = overview;

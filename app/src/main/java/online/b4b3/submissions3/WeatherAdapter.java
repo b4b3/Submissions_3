@@ -23,6 +23,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
 
 
 
+
     public void setData(ArrayList<WeatherItems> items) {
         mData.clear();
         mData.addAll(items);
